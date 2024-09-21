@@ -25,6 +25,7 @@
   
 ## Запуск
 
+https://kjktommy.github.io/Canva_react_ts/
 
 ## Как использовать
 
