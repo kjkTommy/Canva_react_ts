@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# React + TypeScript + Konva.js Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание проекта
 
-Currently, two official plugins are available:
+Это приложение реализует простой графический редактор с использованием React и TypeScript. Пользователь может добавлять различные фигуры (круг, квадрат, треугольник) на холст и перетаскивать их в любом направлении, а также перемещать сам холст. Приложение позволяет переключаться между режимами добавления фигур и курсора для перемещения объектов.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Технологии
 
-## Expanding the ESLint configuration
+В проекте используются следующие технологии:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React** — библиотека для создания пользовательских интерфейсов;
+- **TypeScript** — строго типизированный язык, являющийся надстройкой над JavaScript;
+- **Vite** — инструмент для сборки и разработки современных фронтенд-приложений;
+- **Konva.js** — библиотека для работы с canvas (холстом), которая предоставляет высокоуровневый API для создания и взаимодействия с графическими объектами;
+- **react-konva** — обёртка для Konva.js, обеспечивающая удобную интеграцию с React-компонентами.
 
-- Configure the top-level `parserOptions` property like this:
+## Функциональность
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Холст, который занимает весь экран браузера.
+- Панель инструментов с двумя кнопками:
+  1. Выпадающий список с выбором фигур: круг, квадрат, треугольник. Выбранная фигура добавляется на холст.
+  2. Кнопка для переключения в режим курсора, при котором можно перемещать фигуры и сам холст.
+- Фигуры можно перетаскивать в режиме курсора.
+- Поддержка добавления новых фигур в любое время, даже после включения режима курсора.
+  
+## Запуск
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Как использовать
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Выберите тип фигуры из выпадающего списка в панели инструментов и нажмите кнопку "Добавить фигуру".
+2. Нажмите кнопку "Курсор", чтобы переключиться в режим курсора. Теперь можно перемещать добавленные фигуры и сам холст.
+3. Чтобы добавить новые фигуры, выберите их тип и нажмите "Добавить фигуру". Вы можете добавлять фигуры как до, так и после включения режима курсора.
